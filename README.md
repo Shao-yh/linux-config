@@ -2,7 +2,6 @@
 This is element self vim config file.
 记录适合自己的配置
 
-/*----------------------------------------*/
 2022/03/03:
 映射vi为vim
 .bashrc 配置alisa vi='vim'
