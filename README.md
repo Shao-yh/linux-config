@@ -1,3 +1,8 @@
+# Fastboot_13.sh
+Android 13 flash image脚本
+如果是正确的参数 会执行adb reboot bootloader
+如果flash 出问题，则不会执行fastboot reboot
+
 # ctags
 This is element self vim config file.
 记录适合自己的配置
