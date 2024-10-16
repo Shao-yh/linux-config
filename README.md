@@ -16,3 +16,4 @@ This is element self vim config file.
 
 配置tags以及taglist
 设置tags文件，以及映射tags跳转为默认显示tags列表
+#test
