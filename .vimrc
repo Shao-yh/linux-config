@@ -85,3 +85,9 @@ function SwitchNum()
 	endif
 endfunction
 "--------------------------------------------------
+map <F3> :NERDTreeToggle<cr>
+
+call plug#begin()
+"Plug 'tpope/vim-sensible'
+Plug 'preservim/nerdtree'
+call plug#end()
