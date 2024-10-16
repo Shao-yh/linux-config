@@ -5,8 +5,19 @@
 "----------------------------------------------
 set nu
 set hlsearch
-"syntax on "语法高亮
+set incsearch        "实时搜索
+
+"syntax on					"语法高亮 语法高亮默认已打开
+
 set mouse=a
+"set cursorline            	"当前行有底线，不是很喜欢
+set tabstop=4
+set autoindent             	"自动对齐
+set smartindent             "智能对齐, 没感觉有用
+
+"Vim自动把默认剪贴板和系统剪贴板的内容同步
+"+y, "+p, "+d 或者 "*y, "*d, "*p 指定使用系统剪贴板操作
+set clipboard+=unnamed
 
 "tags version: universal-ctags 
 set tags=./tags;,tags
@@ -37,6 +48,3 @@ map <F4> :TlistToggle<cr>
 "        echo "mouse-xterm"
 "    endif
 "endfunction
-"Vim自动把默认剪贴板和系统剪贴板的内容同步
-"+y, "+p, "+d 或者 "*y, "*d, "*p 指定使用系统剪贴板操作
-set clipboard+=unnamed
