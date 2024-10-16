@@ -26,17 +26,13 @@ map <c-LeftMouse> g<c-]>
 "map <button 1> g
 
 "————————————————————————————————————————————————
+"快捷键F4切换函数列表, F4相当于输入":TlistToggle回车"命令
 "原文链接：https://blog.csdn.net/ballack_linux/article/details/52456944
 let   Tlist_Inc_Winwidth=0                         " //  配置打开函数列表的时候不改变窗口大小
-
 let   Tlist_Use_Right_Window=1                "//  配置函数列表挂靠在屏幕右手边
-
 let   Tlist_File_Fold_Auto_Close=1            "//  配置自动关闭非活动的文件
-
 let   Tlist_Exit_OnlyWindow=1                  " //  配置当前只有函数列表窗口的时候退出vim
-
 map <F4> :TlistToggle<cr>                      
-"快捷键F4切换函数列表
 "————————————————————————————————————————————————
 " toggle between terminal and vim mouse
 "map <silent><F12> :let &mouse=(&mouse == "a"?"":"a")<CR>:call ShowMouseMode()<CR>
@@ -48,3 +44,20 @@ map <F4> :TlistToggle<cr>
 "        echo "mouse-xterm"
 "    endif
 "endfunction
+
+"---变量 函数 映射 静默的应用-----------------------
+"mapF2 开关行号显示
+"<silent>表示静默映射,不会显示Vim在处理rhs过程中对界面产生的变化
+"不加<silent>，会显示call SwitchNum()
+let nu=1
+map <silent><F2> :call SwitchNum()<cr>
+function SwitchNum()
+	if (&nu == 1)
+		let nu=0
+		:set nonu
+	else
+		let nu=1
+		:set nu
+	endif
+endfunction
+"--------------------------------------------------
