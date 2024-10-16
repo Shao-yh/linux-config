@@ -19,6 +19,30 @@ set smartindent             "智能对齐, 没感觉有用
 "+y, "+p, "+d 或者 "*y, "*d, "*p 指定使用系统剪贴板操作
 set clipboard+=unnamed
 
+" 选择其他的窗口
+nnoremap <c-up> <c-w>k
+nnoremap <c-down> <c-w>j
+nnoremap <c-left> <c-w>h
+nnoremap <c-right> <c-w>l
+" CTRL-W t 到顶部窗口
+" CTRL-W b 到底部窗口
+
+" 移动当前的窗口至最左最右
+nnoremap <a-up> <c-w>K
+nnoremap <a-down> <c-w>J
+nnoremap <a-left> <c-w>H
+nnoremap <a-right> <c-w>L
+
+" 调整窗口大小
+nnoremap <c-s-up> <c-w>+
+nnoremap <c-s-down> <c-w>-
+nnoremap <c-s-left> <c-w><
+nnoremap <c-s-right> <c-w>>
+
+":set autochdir            	"设置当前目录自动跟随当前文件,不喜欢这个功能，只是为了记录关闭的命令
+":set acd
+":set noacd
+
 "tags version: universal-ctags 
 set tags=./tags;,tags
 map <c-]> g<c-]>
