@@ -1,0 +1,19 @@
+说明：
+此文档记录nvim配置的一些问题
+
+
+---------------------------------------
+2024-10-17 telescope插件功能fail
+fail log:
+E5108: Error executing lua: ...share/nvim/lazy/telescope.nvim/lua/telescope/pickers.lua:347: Invalid 'event': 'User TelescopeFindPre'
+stack traceback:
+        [C]: in function 'nvim_exec_autocmds'
+        ...share/nvim/lazy/telescope.nvim/lua/telescope/pickers.lua:347: in function 'find'
+        ...im/lazy/telescope.nvim/lua/telescope/builtin/__files.lua:161: in function 'v'
+        ...im/lazy/telescope.nvim/lua/telescope/builtin/__files.lua:570: in function 'v'
+        .../nvim/lazy/telescope.nvim/lua/telescope/builtin/init.lua:511: in function <.../nvim/lazy/telescope.nvim/lua/telescope/builtin/init.lua:478>
+
+通过关键字百度，认为是插件依赖的问题，但是没有解决。
+后续查看telescope.nvim的git, 对比自己的配置，发现是telescope.nvim本身版本的问题。
+更新版本后解决。
+---------------------------------------
