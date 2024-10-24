@@ -30,6 +30,13 @@ vim的缺点是什么呢？
 后续应该会使用neovim.
 
 
+vim的问题记录
+1.拷贝代码不方便
+
+2.ctags只能追定义，不能追引用
+
+
 vim的配置记录
 1.vim配置的说明
-
+1.1 cscope 是C/C++的浏览工具，可以理解为ctags plus.
+现在先不花时间配置cscope，只是cscope的配置中，可以默认vim -t展开所有的tags.

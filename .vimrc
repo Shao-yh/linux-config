@@ -11,6 +11,8 @@ set incsearch        "实时搜索
 
 set mouse=a
 "set cursorline            	"当前行有底线，不是很喜欢
+"hi Cursorline cterm=bold ctermbg=black ctermfg=green guibg=green "粗体显示选中行，用黑色框，字体标绿
+
 set tabstop=4
 set autoindent             	"自动对齐
 set smartindent             "智能对齐, 没感觉有用
@@ -91,3 +93,17 @@ call plug#begin()
 "Plug 'tpope/vim-sensible'
 Plug 'preservim/nerdtree'
 call plug#end()
+
+
+" cscope设置
+if has("cscope")
+  set csprg=/usr/bin/cscope              "指定用来执行 cscope 的命令
+  set csto=1                             "先搜索tags标签文件，再搜索cscope数据库
+  set cst                                "使用|:cstag|(:cs find g)，而不是缺省的:tag
+  set nocsverb                           "不显示添加数据库是否成功
+  "add any database in current directory
+  if filereadable("cscope.out")
+    cs add cscope.out                    "添加cscope数据库
+  endif
+  set csverb                             "显示添加成功与否
+endif
