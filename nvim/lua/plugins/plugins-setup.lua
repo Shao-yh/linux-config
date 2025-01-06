@@ -1,3 +1,5 @@
+-- 1. lazy.nvim存在性检测
+-- Linux: ~/.local/share/nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -9,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+-- 2. 将lazypath设为运行时路径 
+-- rtp (runtime path)
 vim.opt.rtp:prepend(lazypath)
 
 
@@ -47,7 +51,12 @@ local plugins = {
     dependencies = { {'nvim-lua/plenary.nvim'} } -- requires要改为dependencies
   },
 
+  {
+    "hedyhli/outline.nvim",   -- 文件大纲
+  },
+
 }
 local opts = {} -- 注意要定义这个变量
 
+-- 3. 加载lazy.nvim模块
 require("lazy").setup(plugins, opts)

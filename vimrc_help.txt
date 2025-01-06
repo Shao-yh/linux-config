@@ -40,3 +40,10 @@ vim的配置记录
 1.vim配置的说明
 1.1 cscope 是C/C++的浏览工具，可以理解为ctags plus.
 现在先不花时间配置cscope，只是cscope的配置中，可以默认vim -t展开所有的tags.
+
+
+vim最基本的需求
+1. ctags 跳转函数定义的位置
+2. taglist 显示当前文件的大纲
+3. 查找函数被调用的位置
+4. 文件树，tree
