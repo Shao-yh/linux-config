@@ -13,9 +13,22 @@ set mouse=a
 "set cursorline            	"当前行有底线，不是很喜欢
 "hi Cursorline cterm=bold ctermbg=black ctermfg=green guibg=green "粗体显示选中行，用黑色框，字体标绿
 
-set tabstop=4
+"————————————————————————————————————————————————
+"文本对齐相关的配置
+"可以在vim中用:help tabstop命令查看详细内容
+"tabstop  Tab字符显示的长度
+"softtabstop 按Tab输出的长度，不影响tab字符显示的长度
+"如tabstop=8, softtabstop=4,
+"按一次tab输出4个空格，按两次tab输出8个空格，8个空格会自动替换为tab字符显示
+"expandtab 将插入的tab字符替换为特定数目的空格，空格数目与tabstop选项有关
+set tabstop=2
+set softtabstop=2
+set expandtab               "expandtab 把tab替换成空格
+"autocmd FileType c,cpp set shiftwidth=2 | set expandtab
+set shiftwidth=2            "自动缩进的长度
 set autoindent             	"自动对齐
 set smartindent             "智能对齐, 没感觉有用
+"————————————————————————————————————————————————
 
 "Vim自动把默认剪贴板和系统剪贴板的内容同步
 "+y, "+p, "+d 或者 "*y, "*d, "*p 指定使用系统剪贴板操作
@@ -94,7 +107,6 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 call plug#end()
 
-
 " cscope设置
 if has("cscope")
   set csprg=/usr/bin/cscope              "指定用来执行 cscope 的命令
@@ -107,3 +119,6 @@ if has("cscope")
   endif
   set csverb                             "显示添加成功与否
 endif
+
+"解决可视模式 输入:会显示:'<,'>的问题
+vnoremap : <Esc>:
